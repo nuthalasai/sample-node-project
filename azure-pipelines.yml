@@ -1,0 +1,17 @@
+trigger:
+  branches:
+    include:
+      - master
+pool:
+  vmImage: 'ubuntu-latest'
+
+stages:
+  - stage: Build
+    displayName: Build stage
+    jobs:
+      - job: BuildJob
+        displayName: Build Job
+        steps:
+          - script: |
+              npm install
+              npm start
